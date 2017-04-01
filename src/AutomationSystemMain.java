@@ -70,8 +70,16 @@ public class AutomationSystemMain {
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			//	JOptionPane.showMessageDialog(null, "Hi abdullah");
-				Ulbl.setText("Hi it is user name");
-				Plbl.setText("Hi it is password");
+			//	Ulbl.setText("Hi it is user name");
+			//	Plbl.setText("Hi it is password");
+				String name = textField.getText();
+		        String pass = passwordField.getText();
+		        if(name.equals("name")&& pass.equals("cm")){
+		        	JOptionPane.showMessageDialog(null, "success");
+		        }
+		        else{
+		        	JOptionPane.showMessageDialog(null, "not match");
+		        }
 			}
 		});
 		btnSubmit.setBounds(146, 159, 117, 29);
