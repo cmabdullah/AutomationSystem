@@ -10,7 +10,7 @@ public class Login {
 	try{  
 		Class.forName("com.mysql.jdbc.Driver");  
 		Connection con=DriverManager.getConnection( "jdbc:mysql://localhost:3306/AutomationSystem","root","");  
-		//here sonoo is database name, root is username and password  
+		//here AutomationSystem is database name, root is username  
 		Statement stmt=(Statement) con.createStatement();  
 		ResultSet rs=stmt.executeQuery("select * from SystemContent");  
 		while(rs.next())  
@@ -22,5 +22,3 @@ public class Login {
 		}  
 	}  
 }
-
-

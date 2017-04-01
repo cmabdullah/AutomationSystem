@@ -1,15 +1,21 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class AutomationSystemMain extends JFrame {
+public class AutomationSystemMain {
 
-	private JPanel contentPane;
-	private JTextField txtKhan;
+	private JFrame frame;
+	private JTextField textField;
+	private JPasswordField passwordField;
+	private JLabel Ulbl;
+	private JLabel Plbl;
 
 	/**
 	 * Launch the application.
@@ -18,8 +24,8 @@ public class AutomationSystemMain extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AutomationSystemMain frame = new AutomationSystemMain();
-					frame.setVisible(true);
+					AutomationSystemMain window = new AutomationSystemMain();
+					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -28,20 +34,47 @@ public class AutomationSystemMain extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Create the application.
 	 */
 	public AutomationSystemMain() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
-		setContentPane(contentPane);
-		
-		txtKhan = new JTextField();
-		txtKhan.setText("khan");
-		contentPane.add(txtKhan, BorderLayout.CENTER);
-		txtKhan.setColumns(10);
+		initialize();
 	}
 
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		Ulbl = new JLabel("username");
+		Ulbl.setBounds(6, 42, 164, 16);
+		frame.getContentPane().add(Ulbl);
+		
+		Plbl = new JLabel("password");
+		Plbl.setBounds(6, 89, 164, 16);
+		frame.getContentPane().add(Plbl);
+		
+		textField = new JTextField();
+		textField.setBounds(182, 37, 130, 26);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(182, 84, 130, 26);
+		frame.getContentPane().add(passwordField);
+		
+		JButton btnSubmit = new JButton("Submit");
+		btnSubmit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			//	JOptionPane.showMessageDialog(null, "Hi abdullah");
+				Ulbl.setText("Hi it is user name");
+				Plbl.setText("Hi it is password");
+			}
+		});
+		btnSubmit.setBounds(146, 159, 117, 29);
+		frame.getContentPane().add(btnSubmit);
+	}
 }
