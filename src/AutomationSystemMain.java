@@ -74,12 +74,20 @@ public class AutomationSystemMain {
 			//	Plbl.setText("Hi it is password");
 				String name = textField.getText();
 		        String pass = passwordField.getText();
+		        /**
 		        if(name.equals("name")&& pass.equals("cm")){
 		        	JOptionPane.showMessageDialog(null, "success");
 		        }
 		        else{
 		        	JOptionPane.showMessageDialog(null, "not match");
 		        }
+		        */
+		        if(booleanLoginTest.check(name, pass)){
+		        	new Student().setVisible(true);
+		         //   this.setVisible(false);
+		        }
+
+		        
 			}
 		});
 		btnSubmit.setBounds(146, 159, 117, 29);
