@@ -52,11 +52,11 @@ public class AutomationSystemMain {
 		frame.getContentPane().setLayout(null);
 		
 		Ulbl = new JLabel("username");
-		Ulbl.setBounds(6, 42, 164, 16);
+		Ulbl.setBounds(54, 42, 95, 16);
 		frame.getContentPane().add(Ulbl);
 		
 		Plbl = new JLabel("password");
-		Plbl.setBounds(6, 89, 164, 16);
+		Plbl.setBounds(53, 89, 83, 16);
 		frame.getContentPane().add(Plbl);
 		
 		textField = new JTextField();
@@ -86,12 +86,12 @@ public class AutomationSystemMain {
 		        */
 		        if(booleanLoginTest.check(name, pass)){
 		        	StudentCP cc = new StudentCP();
-		        	cc.NewScreen();
+		        	//cc.NewScreen();
 		        	cc.setVisible(true);
 		        }
 			}
 		});
-		btnSubmit.setBounds(146, 159, 117, 29);
+		btnSubmit.setBounds(168, 144, 117, 29);
 		frame.getContentPane().add(btnSubmit);
 	}
 }

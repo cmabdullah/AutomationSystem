@@ -11,11 +11,11 @@ import java.awt.event.ActionEvent;
 import javax.swing.JEditorPane;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
+import java.awt.Color;
 
 public class StudentCP extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtHiAbdullahHow;
 
 	/**
 	 * Launch the application.
@@ -41,22 +41,20 @@ public class StudentCP extends JFrame {
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
 		
-		JPanel panel = new JPanel();
-		contentPane.add(panel, BorderLayout.CENTER);
+		JButton btnHome = new JButton("Home");
+		btnHome.setBounds(26, 31, 117, 29);
+		contentPane.add(btnHome);
 		
-		JRadioButton rdbtnRadio = new JRadioButton("radio");
-		panel.add(rdbtnRadio);
+		JButton btnProfile = new JButton("Profile");
+		btnProfile.setBounds(170, 31, 117, 29);
+		contentPane.add(btnProfile);
 		
-		JButton btnNewButton = new JButton("New button");
-		panel.add(btnNewButton);
-		
-		txtHiAbdullahHow = new JTextField();
-		txtHiAbdullahHow.setText("Hi abdullah How are you???");
-		panel.add(txtHiAbdullahHow);
-		txtHiAbdullahHow.setColumns(10);
+		JButton btnStartExm = new JButton("Start exm");
+		btnStartExm.setBackground(Color.GREEN);
+		btnStartExm.setBounds(313, 31, 117, 29);
+		contentPane.add(btnStartExm);
 	}
-
 }
