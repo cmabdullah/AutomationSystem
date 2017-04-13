@@ -2,6 +2,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
@@ -83,11 +85,10 @@ public class AutomationSystemMain {
 		        }
 		        */
 		        if(booleanLoginTest.check(name, pass)){
-		        	new Student().setVisible(true);
-		         //   this.setVisible(false);
+		        	StudentCP cc = new StudentCP();
+		        	cc.NewScreen();
+		        	cc.setVisible(true);
 		        }
-
-		        
 			}
 		});
 		btnSubmit.setBounds(146, 159, 117, 29);
