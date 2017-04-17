@@ -8,9 +8,12 @@ package automationsystem;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -83,6 +86,31 @@ public class TeacherQ extends javax.swing.JFrame {
     
     
     
+    
+    //execute the query
+    public void executeSQlQuery(String query , String message) throws SQLException{
+        Connection con = getConnection();
+        Statement st;
+        try{
+            st = con.createStatement();
+            if ((st.executeUpdate(query)) == 1){
+                JOptionPane.showMessageDialog(null,"Data "+message+"Successfully");
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"Data Not "+message);
+            }
+       
+        }
+        catch(Exception ex){  
+            ex.printStackTrace();
+        }
+    }
+
+    
+    
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -131,6 +159,11 @@ public class TeacherQ extends javax.swing.JFrame {
                 "ID", "FirstName", "LastName", "Age"
             }
         ));
+        jTableDisplayUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableDisplayUserMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableDisplayUser);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -149,7 +182,7 @@ public class TeacherQ extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jTextField_Age))
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,6 +230,16 @@ public class TeacherQ extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTableDisplayUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableDisplayUserMouseClicked
+        // Display Selected row in Jtextfields
+        int i = jTableDisplayUser.getSelectedRow();
+        TableModel model = jTableDisplayUser.getModel();
+        jTextField_ID.setText(model.getValueAt(i, 0).toString());
+        jTextField_firstName.setText(model.getValueAt(i, 1).toString());
+        jTextField_Lastname.setText(model.getValueAt(i, 2).toString());
+        jTextField_Age.setText(model.getValueAt(i, 3).toString());
+    }//GEN-LAST:event_jTableDisplayUserMouseClicked
 
     /**
      * @param args the command line arguments
