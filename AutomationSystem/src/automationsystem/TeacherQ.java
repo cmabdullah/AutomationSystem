@@ -11,6 +11,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -94,6 +96,14 @@ public class TeacherQ extends javax.swing.JFrame {
         try{
             st = con.createStatement();
             if ((st.executeUpdate(query)) == 1){
+                
+                
+                //refresh query.......
+                DefaultTableModel model = (DefaultTableModel)jTableDisplayUser.getModel();
+                model.setRowCount(0);
+                TeacherQ();
+                
+                
                 JOptionPane.showMessageDialog(null,"Data "+message+"Successfully");
             }
             else{
@@ -146,10 +156,25 @@ public class TeacherQ extends javax.swing.JFrame {
         jLabel4.setText("Age");
 
         jButton_Insert.setText("Insert");
+        jButton_Insert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_InsertActionPerformed(evt);
+            }
+        });
 
         jButton_Update.setText("Update");
+        jButton_Update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_UpdateActionPerformed(evt);
+            }
+        });
 
         jButton_Delete.setText("Delete");
+        jButton_Delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_DeleteActionPerformed(evt);
+            }
+        });
 
         jTableDisplayUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -240,6 +265,42 @@ public class TeacherQ extends javax.swing.JFrame {
         jTextField_Lastname.setText(model.getValueAt(i, 2).toString());
         jTextField_Age.setText(model.getValueAt(i, 3).toString());
     }//GEN-LAST:event_jTableDisplayUserMouseClicked
+
+    
+    private void jButton_InsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_InsertActionPerformed
+        try {
+            // TODO add your handling code here:
+            
+            String query =  "INSERT INTO `SystemContent`(`id`, `fname`, `lname`, `age`) VALUES ('"+jTextField_ID.getText()+"'  ,'"+jTextField_firstName.getText()+"' , '"+jTextField_Lastname.getText()+"' ,  "+jTextField_Age.getText()+" )";
+            
+            executeSQlQuery(query , "Inserted");
+        } catch (SQLException ex) {
+            Logger.getLogger(TeacherQ.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton_InsertActionPerformed
+
+    private void jButton_UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_UpdateActionPerformed
+        try {
+            // TODO add your handling code here:
+
+            String query ="  UPDATE `SystemContent` SET `fname`='"+jTextField_firstName.getText()+"',`lname`='"+jTextField_Lastname.getText()+"',`age`="+jTextField_Age.getText()+" WHERE `id` = "+ jTextField_ID.getText() ;
+             
+            executeSQlQuery(query , "Inserted");
+        } catch (SQLException ex) {
+            Logger.getLogger(TeacherQ.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jButton_UpdateActionPerformed
+
+    private void jButton_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_DeleteActionPerformed
+        try {
+            // TODO add your handling code here:
+            String query = "DELETE FROM `SystemContent` WHERE id="+jTextField_ID.getText(); 
+            executeSQlQuery(query , "Inserted");
+        } catch (SQLException ex) {
+            Logger.getLogger(TeacherQ.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton_DeleteActionPerformed
 
     /**
      * @param args the command line arguments
