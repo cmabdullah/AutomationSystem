@@ -62,6 +62,9 @@ public class TeacherQ {
 		JLabel label_4 = new JLabel("5");
 		label_4.setBounds(30, 207, 61, 16);
 		frame.getContentPane().add(label_4);
+		
+		JLabel lblLookUponHim = new JLabel("Look upon him as my brother");
+		lblLookUponHim.setBounds(61, 42, 235, 16);
+		frame.getContentPane().add(lblLookUponHim);
 	}
-
 }

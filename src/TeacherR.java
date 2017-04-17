@@ -2,7 +2,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-public class TeacherL {
+public class TeacherR {
 
 	private JFrame frame;
 
@@ -13,7 +13,7 @@ public class TeacherL {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TeacherL window = new TeacherL();
+					TeacherR window = new TeacherR();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -25,7 +25,7 @@ public class TeacherL {
 	/**
 	 * Create the application.
 	 */
-	public TeacherL() {
+	public TeacherR() {
 		initialize();
 	}
 
