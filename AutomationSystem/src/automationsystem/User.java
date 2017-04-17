@@ -21,6 +21,10 @@ public class User {
         this.lastName = LastName;
         this.age = Age;
     }
+
+    User(int aInt, String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     public int getId(){
     return id;
 }

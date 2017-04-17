@@ -18,7 +18,7 @@ public class Connect {
         try{  
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/AutomationSystem", "root", "");  
             Statement stmt=(Statement) con.createStatement();
-            ResultSet rs=stmt.executeQuery("select * from SystemContent where username='"+a+"'");  
+            ResultSet rs=stmt.executeQuery("select * from log where username='"+a+"'");  
             if(rs.next()){
                 if(rs.getString(2).compareTo(b)==0){
                     JOptionPane.showMessageDialog(null, "Login Successfull");
