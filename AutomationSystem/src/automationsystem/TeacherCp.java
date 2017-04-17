@@ -28,7 +28,7 @@ public class TeacherCp extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        tQuestion = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -37,7 +37,12 @@ public class TeacherCp extends javax.swing.JFrame {
 
         jButton1.setText("Home");
 
-        jButton2.setText("Question");
+        tQuestion.setText("Question");
+        tQuestion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tQuestionActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Result");
 
@@ -53,7 +58,7 @@ public class TeacherCp extends javax.swing.JFrame {
                 .addContainerGap(13, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(tQuestion)
                 .addGap(12, 12, 12)
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
@@ -72,7 +77,7 @@ public class TeacherCp extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2)
+                    .addComponent(tQuestion)
                     .addComponent(jButton3)
                     .addComponent(jButton4))
                 .addContainerGap(213, Short.MAX_VALUE))
@@ -80,6 +85,11 @@ public class TeacherCp extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tQuestionActionPerformed
+        // TODO add your handling code here:
+        new TeacherQ().setVisible(true);
+    }//GEN-LAST:event_tQuestionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -118,9 +128,9 @@ public class TeacherCp extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton tQuestion;
     // End of variables declaration//GEN-END:variables
 }
