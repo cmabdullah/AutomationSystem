@@ -298,17 +298,7 @@ public class StudentsQA extends javax.swing.JFrame {
             executeSQlQuery(query2 );
             executeSQlQuery(query3);
             executeSQlQueryCpy(query4 , "Inserted");
-        } 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        }
         catch (SQLException ex) {
             Logger.getLogger(TeacherQA.class.getName()).log(Level.SEVERE,"", ex);
         }
