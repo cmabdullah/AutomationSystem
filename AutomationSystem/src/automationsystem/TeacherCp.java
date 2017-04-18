@@ -45,6 +45,11 @@ public class TeacherCp extends javax.swing.JFrame {
         });
 
         jButton3.setText("Result");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Profile");
 
@@ -88,8 +93,13 @@ public class TeacherCp extends javax.swing.JFrame {
 
     private void tQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tQuestionActionPerformed
         // TODO add your handling code here:
-        new TeacherQ().setVisible(true);
+        new TeacherQA().setVisible(true);
     }//GEN-LAST:event_tQuestionActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        new Result().setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

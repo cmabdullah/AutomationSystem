@@ -163,6 +163,11 @@ public class TeacherQ extends javax.swing.JFrame {
         });
 
         jButton_Update.setText("Update");
+        jButton_Update.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_UpdateMouseClicked(evt);
+            }
+        });
         jButton_Update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_UpdateActionPerformed(evt);
@@ -301,6 +306,10 @@ public class TeacherQ extends javax.swing.JFrame {
             Logger.getLogger(TeacherQ.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton_DeleteActionPerformed
+
+    private void jButton_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_UpdateMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_UpdateMouseClicked
 
     /**
      * @param args the command line arguments
