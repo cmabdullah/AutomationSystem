@@ -289,7 +289,7 @@ public class StudentsQA extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             String query =  "INSERT INTO `SA`(`an`, `ID`) VALUES ('"+jTextFieldAnsS.getText()+"' ,"+jTextFieldAiD.getText()+")";
-            String query1 =  "INSERT INTO `SA`(`an`, `ID`) VALUES ('"+jTextFieldAnsS1.getText()+"' ,"+jTextFieldAiD1.getText()+")";
+            String query1 = "INSERT INTO `SA`(`an`, `ID`) VALUES ('"+jTextFieldAnsS1.getText()+"' ,"+jTextFieldAiD1.getText()+")";
             String query2 =  "INSERT INTO `SA`(`an`, `ID`) VALUES ('"+jTextFieldAnsS2.getText()+"' ,"+jTextFieldAiD2.getText()+")";
             String query3 =  "INSERT INTO `SA`(`an`, `ID`) VALUES ('"+jTextFieldAnsS3.getText()+"' ,"+jTextFieldAiD3.getText()+")";
             String query4 =  "INSERT INTO `SA`(`an`, `ID`) VALUES ('"+jTextFieldAnsS4.getText()+"' ,"+jTextFieldAiD4.getText()+")";

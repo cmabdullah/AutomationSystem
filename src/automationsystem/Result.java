@@ -41,7 +41,6 @@ public class Result extends javax.swing.JFrame {
             for(int i=model.getRowCount()-1;i>=0;i--){
                 model.removeRow(i);
             }
-            
             while(rs.next()){
                  Object row[]=new Object[5];
                  row[0]=rs.getString(1);
